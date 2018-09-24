@@ -1,0 +1,89 @@
+@import 'https://fonts.googleapis.com/css?family=PT+Serif';
+
+body {
+  background: #EBEBEB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'PT Serif';
+}
+
+.App {
+  height: 400px;
+  width: 300px;
+  perspective: 0 200px;
+  background: #EBEBEB;
+  transition: transform .5s ease .5s;
+  position: relative;
+}
+
+.App:hover {
+  transform: scale(1.5) skew(0deg);
+  transition: transform .6s;
+}
+
+.display {
+  background: black;
+  color: white;
+  text-shadow: 0 0 5px rgba(89, 195, 195, 0.5);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 29px;
+  box-sizing: border-box;
+  height: 20%;
+  overflow: hidden;
+  font-size: 34px;
+  position: relative;
+}
+
+.display::after {
+  background: white;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  height: 100%;
+  mix-blend-mode: overlay;
+  display: block;
+  z-index: 2;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 80%;
+}
+
+.button {
+  background: #d3d3d3;
+  display: flex;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.5);
+  height: 20%;
+  min-width: 25%;
+}
+
+.button[size="2"] {
+  height: 40%;
+}
+
+.button[value="null"] {
+  pointer-events: none;
+}
+
+.button:hover {
+  background: #e8e8e8;
+  cursor: pointer;
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import Button from './Button';
 
 const Buttons = ({ onClick }) => (
-  <div>
+  <div className="buttons">
     <Button onClick={onClick} label="C" value="clear" />
     <Button onClick={onClick} label="7" value="7" />
     <Button onClick={onClick} label="4" value="4" />
@@ -15,11 +15,12 @@ const Buttons = ({ onClick }) => (
     <Button onClick={onClick} label="." value="." />
     <Button onClick={onClick} label="x" value="*" />
     <Button onClick={onClick} label="9" value="9" />
+    <Button onClick={onClick} label="6" value="6" />
     <Button onClick={onClick} label="3" value="3" />
-    <Button label="blk" value="null" />
+    <Button label="" value="null" />
     <Button onClick={onClick} label="-" value="-" />
-    <Button onClick={onClick} label="+" value="+" />
-    <Button onClick={onClick} label="=" value="equal" />
+    <Button onClick={onClick} label="+" size="2" value="+" />
+    <Button onClick={onClick} label="=" size="2" value="equal" />
   </div>
 );
 

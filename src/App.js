@@ -3,7 +3,6 @@ import Buttons from './components/Buttons';
 import Display from './components/Display';
 import math from 'mathjs';
 import update from 'immutability-helper';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
