@@ -1,8 +1,11 @@
 import React from 'react';
 
 const Button = ({ onClick, label, value }) => (
-  <div>
-    
+  <div
+    onClick={onClick}
+    className="button"
+  >
+    {label}
   </div>
 );
 

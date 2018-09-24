@@ -16,7 +16,7 @@ const Buttons = ({ onClick }) => (
     <Button onClick={onClick} label="x" value="*" />
     <Button onClick={onClick} label="9" value="9" />
     <Button onClick={onClick} label="3" value="3" />
-    <Button label="null" value="null" />
+    <Button label="blk" value="null" />
     <Button onClick={onClick} label="-" value="-" />
     <Button onClick={onClick} label="+" value="+" />
     <Button onClick={onClick} label="=" value="equal" />
