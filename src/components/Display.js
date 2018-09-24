@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Display = (props) => (
-  <div>
-    Display
+const Display = ({ info }) => (
+  <div className="display">
+    {info.join('')}
   </div>
 );
 
