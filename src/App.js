@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Buttons from './components/Buttons';
 import Display from './components/Display';
 import math from 'mathjs';
+import update from 'immutability-helper';
 import logo from './logo.svg';
 import './App.css';
 
@@ -27,7 +28,24 @@ class App extends Component {
   }
 
   onClick = (e) => {
+    const value = e.target.getAttribute('value');
 
+    switch (value) {
+      case 'clear':
+        this.setState({
+          operations: []
+        })
+        break;
+      case 'equal':
+        this.calculate()
+        break;
+      default:
+        const newOperations = update(this.state.operations, { $push: [value]})
+        this.setState({
+          operations: newOperations
+        })
+        break;
+    }
   }
 
   render() {
