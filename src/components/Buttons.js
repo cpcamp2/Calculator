@@ -3,7 +3,12 @@ import Button from './Button';
 
 const Buttons = (props) => (
   <div>
-    Buttons
+    <Button />
+    <Button />
+    <Button />
+    <Button />
+    <Button />
+    <Button />
   </div>
 );
 

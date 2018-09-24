@@ -13,6 +13,18 @@ class App extends Component {
     }
   }
 
+  calculate = () => {
+    let solution = this.state.operations.join('');
+    
+    if (solution) {
+      solution = math.eval(solution)
+      solution = math.format(solution, { precision: 14 })
+      this.setState({
+        operations: [solution]
+      })
+    };
+  }
+
   render() {
     return (
       <div className="App">
