@@ -1,6 +1,7 @@
 import React from 'react';
+import Button from './Button';
 
-const Buttons = () => (
+const Buttons = (props) => (
   <div>
     Buttons
   </div>
