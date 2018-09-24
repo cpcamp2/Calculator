@@ -26,11 +26,15 @@ class App extends Component {
     };
   }
 
+  onClick = (e) => {
+
+  }
+
   render() {
     return (
       <div className="App">
         <Display info={this.state.operations} />
-        <Buttons />
+        <Buttons onClick={this.onClick} />
       </div>
     );
   }
