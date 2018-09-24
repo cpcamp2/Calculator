@@ -1,18 +1,58 @@
 import React, { Component } from 'react';
+import Buttons from './components/Buttons';
+import Display from './components/Display';
+import math from 'mathjs';
+import update from 'immutability-helper';
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      operations: []
+    }
+  }
+
+  calculate = () => {
+    let solution = this.state.operations.join('');
+
+    if (solution) {
+      solution = math.eval(solution)
+      solution = math.format(solution, { precision: 14 })
+      this.setState({
+        operations: [solution]
+      })
+    };
+  }
+
+  onClick = (e) => {
+    const value = e.target.getAttribute('value');
+
+    switch (value) {
+      case 'clear':
+        this.setState({
+          operations: []
+        })
+        break;
+      case 'equal':
+        this.calculate()
+        break;
+      default:
+        const newOperations = update(this.state.operations, { $push: [value]})
+        this.setState({
+          operations: newOperations
+        })
+        break;
+    }
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Display info={this.state.operations} />
+        <Buttons onClick={this.onClick} />
       </div>
     );
   }
