@@ -2,8 +2,9 @@ import React from 'react';
 
 const Button = ({ onClick, label, value }) => (
   <div
-    onClick={onClick}
     className="button"
+    onClick={onClick}
+    value={value}
   >
     {label}
   </div>
